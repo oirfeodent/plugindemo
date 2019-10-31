@@ -171,7 +171,7 @@ void hello()
 
     // Say hello now :
     // Scintilla control has no Unicode mode, so we use (char *) here
-    ::SendMessage(curScintilla, SCI_SETTEXT, 0, (LPARAM)"Hello, Notepad++!");
+    ::SendMessage(curScintilla, SCI_SETTEXT, 0, (LPARAM)"Hello, Testing Notepad++ plugin!");
 }
 
 static DWORD WINAPI threadZoomer(void *)
