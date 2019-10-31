@@ -16,7 +16,6 @@ platform:
 
 configuration:
     - Release
-    - Debug
 
 install:
     - if "%platform%"=="x64" set archi=amd64
@@ -40,14 +39,6 @@ after_build:
             Push-AppveyorArtifact "bin64\NppPluginDemo.dll" -FileName "$plugindemoFileName"
         }
         
-        if ($env:PLATFORM -eq "x64" -and $env:CONFIGURATION -eq "Debug") {
-            Push-AppveyorArtifact "vs.proj\x64\Debug\NppPluginDemo.dll" -FileName "$plugindemoFileName"
-        }
-        
         if ($env:PLATFORM -eq "Win32" -and $env:CONFIGURATION -eq "Release") {
             Push-AppveyorArtifact "bin\NppPluginDemo.dll" -FileName "$plugindemoFileName"
-        }
-        
-        if ($env:PLATFORM -eq "Win32" -and $env:CONFIGURATION -eq "Debug") {
-            Push-AppveyorArtifact "vs.proj\Debug\NppPluginDemo.dll" -FileName "$plugindemoFileName"
         }
